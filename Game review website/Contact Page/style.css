@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root{
+    --primary-color: #295bff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+}
+
+header{
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    min-height: 70px;
+    background-color: var(--primary-color);
+}
+
+header a{
+    color: #fff;
+    padding: 5px 0;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+}
+
+header nav a::before{
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    height: 3px;
+    width: 0;
+    bottom: 0;
+    transition: 300ms width ease-out;
+}
+
+header nav a:hover::before, .current::before{
+    width: 100%;
+}
+
+header li{
+    list-style: none;
+    font-size: 0.8rem;
+}
+
+header ul{
+    display: flex;
+    gap: 22px;
+}
+
+.open{
+    display: flex;
+}
+
+.lines{
+    cursor: pointer;
+    display: none;
+}
+
+.lines > * + *{
+    margin-top: 4px;
+}
+
+.line{
+    width: 35px;
+    height: 4px;
+    background-color: #fff;
+}
+
+.open + .lines .line-1{
+    transform: rotate(-45deg) translateY(3px);
+    margin: 0;
+}
+
+.open + .lines .line-2{
+    display: none;
+}
+
+.open + .lines .line-3{
+    transform: rotate(45deg)  translateY(-3px);
+    margin: 0;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 130px);
+    padding: 0 80px;
+}
+
+form{
+    width: 600px;
+    max-width: 100%;
+}
+
+label{
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+input, textarea{
+    outline: none;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #888;
+    padding: 10px;
+    width: 100%;
+}
+
+textarea{
+    resize: none;
+    height: 160px;
+}
+
+input:focus, textarea:focus{
+    border-color: var(--primary-color);
+}
+
+input[type='submit']{
+    border: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor:pointer;
+}
+
+footer{
+    background-color: var(--primary-color);
+    min-height: 60px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+@media(max-width: 768px){
+    header{
+        padding: 0 50px;
+    }
+    header ul{
+        background-color: var(--primary-color);
+        gap: 50px;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 70px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    header li{
+        font-size: 1rem;
+    }
+
+    .lines{
+        display: inline-block;
+    }
+
+    main{
+        padding: 30px 40px;
+    }
+
+    input, label{
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width: 425px){
+    header{
+        padding: 0 30px;
+    }
+
+    main{
+        padding: 0 20px;
+        margin: 20px 0;
+    }
+
+    footer{
+        font-size: 0.7rem;
+    }
+}

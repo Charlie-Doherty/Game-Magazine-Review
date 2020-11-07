@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../Images/Icon.ico">
+<link rel="stylesheet" href="style.css">
+<title>Game Magazine Reviews | Contact</title>
+</head>
+
+<body>
+	<header>
+		<a href="../index.html">GMR</a>
+		<nav>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../Photo Gallery/Photo Gallery.html">Photo Gallery</a></li>
+				<li><a href="../Synopsis Page/Synopsis.html">Synopsis</a></li>
+				<li><a href="../Reviews Page/Reviews.html">Reviews</a></li>
+				<li><a class="current" href="Contact.html">Contact</a></li>
+			</ul>
+			<div class="lines">
+				<div class="line line-1"></div>
+				<div class="line line-2"></div>
+				<div class="line line-3"></div>
+			</div>
+		</nav>
+	</header>
+	
+	<main>
+		<form method="POST">
+			<label>Name</label>
+			<input type="text" name="name" maxlength="25" required>
+			<label>Email</label>
+			<input type="email" name="email" required>
+			<label>Feedback</label>
+			<textarea name="feedback" rows="4" maxlength="2000" required></textarea>
+			<input type="submit" value="Submit Feedback">
+		</form>
+	</main>
+
+	<footer>
+		<p>&copy; 2020 Charlie Doherty. All rights reserved.</p>
+	</footer>
+
+	<script>
+		const lines = document.querySelector('.lines');
+		const menu = document.querySelector('ul');
+
+		lines.addEventListener('click', () =>{
+			menu.classList.toggle('open');
+		});
+	</script>
+</body>
+</html>

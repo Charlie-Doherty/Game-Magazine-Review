@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../Images/Icon.ico">
+<link rel="stylesheet" href="style.css">
+<title>Game Magazine Reviews | Photo Gallery</title>
+</head>
+
+<body>
+	<header>
+		<a href="index.html">GMR</a>
+		<nav>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a class="current" href="Photo Gallery.html">Photo Gallery</a></li>
+				<li><a href="../Synopsis Page/Synopsis.html">Synopsis</a></li>
+				<li><a href="../Reviews Page/Reviews.html">Reviews</a></li>
+				<li><a href="../Contact Page/Contact.html">Contact</a></li>
+			</ul>
+			<div class="lines">
+				<div class="line line-1"></div>
+				<div class="line line-2"></div>
+				<div class="line line-3"></div>
+			</div>
+		</nav>
+	</header>
+
+	<div id="overlay">
+	  <span id="close" title="Close(Esc)">&times;</span>
+	  <img class="modal-content">
+	</div>
+	
+	<main>
+		<h2>GAMEPLAY</h2>
+		<div class="gallery">
+			<img src="../Images/Gallery-Image1.JPG" alt="Mario possessing a Goomba">
+			<img src="../Images/Gallery-Image2.JPG" alt="Mario in Explorer Outfit">
+			<img src="../Images/Gallery-Image3.JPG" alt="Mario riding a Jaxi">
+			<img src="../Images/Gallery-Image4.JPG" alt="Mario possessing a Frog">
+			<img src="../Images/Gallery-Image5.PNG" alt="Mario running in with Dinosaur Skeleton in the distance">
+			<img src="../Images/Gallery-Image6.JPG" alt="Bowser holding scared Tiara">
+		</div>
+		<h2>CONCEPT ART</h2>
+		<div class="gallery">
+			<img src="../Images/Gallery-Image7.JPG" alt="Mario in a pipe surrounded by a city">
+			<img src="../Images/Gallery-Image8.JPG" alt="Floating landscape">
+			<img src="../Images/Gallery-Image9.JPG" alt="Rabbits in hats">
+		</div>
+	</main>
+
+	<footer>
+		<p>&copy; 2020 Charlie Doherty. All rights reserved.</p>
+	</footer>
+
+	<script>
+		const lines = document.querySelector('.lines');
+		const menu = document.querySelector('ul');
+
+		lines.addEventListener('click', () =>{
+			menu.classList.toggle('open');
+		});
+
+		const overlay = document.querySelector('#overlay');
+		const close = document.querySelector('#close');
+		const img = document.querySelectorAll('.gallery img');
+		const modal = document.querySelector('.modal-content');
+		
+		img.forEach(img => img.addEventListener('click', openOverlay));
+		function openOverlay(e){
+		overlay.style.display = 'block';
+		modal.src = e.target.src;
+		document.body.style.overflow = 'hidden';
+		open = true;
+		}
+
+		close.addEventListener('click', closeModal);
+		let open = false;
+		function closeModal(e){
+			if(open == true){
+				overlay.style.display = 'none';
+				document.body.style.overflow = 'auto';
+				open = false;
+			}
+		}
+
+		window.addEventListener('keydown', closeModalOnKeyPress);
+		function closeModalOnKeyPress(e){
+			if(e.code == 'Escape'){
+				overlay.style.display = 'none';
+				document.body.style.overflow = 'auto';
+				open = false;
+			}
+		}
+	</script>
+</body>
+</html>

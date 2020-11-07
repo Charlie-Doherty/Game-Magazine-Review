@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="Images/Icon.ico">
+<link rel="stylesheet" href="style.css">
+<title>Game Magazine Reviews | Home</title>
+</head>
+
+<body>
+	<header>
+		<a class="logo" href="index.html">GMR</a>
+		<nav>
+			<ul>
+				<li><a class="current" href="index.html">Home</a></li>
+				<li><a href="Photo Gallery/Photo Gallery.html">Photo Gallery</a></li>
+				<li><a href="Synopsis Page/Synopsis.html">Synopsis</a></li>
+				<li><a href="Reviews Page/Reviews.html">Reviews</a></li>
+				<li><a href="Contact Page/Contact.html">Contact</a></li>
+			</ul>
+			<div class="lines">
+				<div class="line line-1"></div>
+				<div class="line line-2"></div>
+				<div class="line line-3"></div>
+			</div>
+		</nav>
+	</header>
+	
+	<main>
+		<div class = "box">
+			<ion-icon name="videocam-outline"></ion-icon>
+			<h3>Game Reviews</h3>
+			<p>This website displays game reviews from other readers so you can decide if you want to play a game for the first time or just want to see what other people think of the game you like.</p>
+		</div>
+		<div class = "box">
+			<ion-icon name="clipboard-outline"></ion-icon>
+			<h3>Game Synopsis</h3>
+			<p>This website displays game synopses so you can learn about the game, maybe you're interested in trying the game out but dont know if you'll like it, or you might learn something new.</p>
+		</div>
+		<div class = "box">
+			<ion-icon name="image-outline"></ion-icon>			
+			<h3>Gameplay Photos</h3>
+			<p>This website displays gameplay photos and concept art in the Photo Gallery so you can look at various points throughout the game with easy to see images displayed in one place.</p>
+		</div>
+	</main>
+
+	<footer>
+		<p>&copy; 2020 Charlie Doherty. All rights reserved.</p>
+	</footer>
+
+	<script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+	<script>
+		const lines = document.querySelector('.lines');
+		const menu = document.querySelector('ul');
+
+		lines.addEventListener('click', () =>{
+			menu.classList.toggle('open');
+		});
+	</script>
+</body>
+</html>

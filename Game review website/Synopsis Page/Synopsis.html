@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../Images/Icon.ico">
+<link rel="stylesheet" href="style.css">
+<title>Game Magazine Reviews | Synopsis</title>
+</head>
+
+<body>
+	<header>
+		<a href="../index.html">GMR</a>
+		<nav>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../Photo Gallery/Photo Gallery.html">Photo Gallery</a></li>
+				<li><a class="current" href="Synopsis.html">Synopsis</a></li>
+				<li><a href="../Reviews Page/Reviews.html">Reviews</a></li>
+				<li><a href="../Contact Page/Contact.html">Contact</a></li>
+			</ul>
+			<div class="lines">
+				<div class="line line-1"></div>
+				<div class="line line-2"></div>
+				<div class="line line-3"></div>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<div id="overlay">
+			<span id="close" aria-label="close overlay">&times;</span>
+			<iframe id="video" src="https://www.youtube.com/embed/e9r5hx47kxM" frameborder="0"  allowfullscreen></iframe>
+		</div>
+		<section>
+			<h3>Synopsis</h3>
+			<p>Super Mario Odyssey is a platform game that is only on one platform, the "Nintendo Switch" and was published on October 27, 2017. The current latest entry in the Super Mario series, it follows Mario and Cappy, a sentient hat that allows Mario to control other characters and objects, as they journey across various worlds to save Princess Peach from Bowser, who plans to forcibly marry her. Various ideas were suggested during development, and to incorporate them all, the team decided to employ a sandbox-style of gameplay. Unlike previous games in the franchise, which were aimed at a casual audience, the team designed Super Mario Odyssey to appeal to the series' core fans. The game also features a vocal theme song, "<span title="Click to watch video" id="open">Jump Up, Super Star!</span>", a first for the series. Super Mario Odyssey received universal acclaim from critics who called it one of the best games in the series, with particular praise towards its inventiveness and originality.</p>
+			<h3>Story</h3>
+			<p>In the skies above Peach's Castle, Mario and Bowser are seen fighting each other on Bowser's airship, with Princess Peach on board as well. Bowser knocks Mario's cap off his head and then hits Mario sending him flying off the airship. Bowser then leaves in his airship as he prepares a forced marriage to Peach. Mario's cap drifts into the ship's back propellers, shredding it in the process. A piece is obtained by a a sentient hat named Cappy, who finds Mario passed out in the Cap Kingdom.  Cappy introduces himself, and explains to Mario that Bowser has kidnapped Cappy's sister, Tiara, to use as Peach's wedding headdress. Mario and Cappy team up to save Peach and Tiara, using the piece of Mario's Cap collected Cappy transforms into the Mario Cap allowing Mario to use Cappy's abilities. Cappy tells Mario that they may be able to find an airship in the next kingdom, at the Top Hat Tower. However, upon reaching the top, Mario is encountered by an enemy hired by Bowser. After defeating the enemy known as Broodals, Mario and Cappy travel to Cascade Kingdom where they find the airship, named the Odyssey, which uses Power Moons as energy to travel. Soon after, Mario and Cappy find and defeat the boss of the Broodals and using the power of the Multi Moon obtained from the fight take the Odyssey though several kingdoms to find Peach and Tiara.</p>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2020 Charlie Doherty. All rights reserved.</p>
+	</footer>
+
+	<script>
+		const lines = document.querySelector('.lines');
+		const menu = document.querySelector('ul');
+
+		lines.addEventListener('click', () =>{
+			menu.classList.toggle('open');
+		});
+
+		const closeButton = document.querySelector("#close");
+		const openButton = document.querySelector("#open");
+		const overlay = document.querySelector("#overlay");
+		const video = document.querySelector("#video");
+
+		const source = 'e9r5hx47kxM';
+
+		closeButton.addEventListener('click', () => {
+			overlay.style.display = "none";
+			document.body.style.overflow = "auto";
+			video.setAttribute('src', 'https://www.youtube.com/embed/')
+		});
+		
+		openButton.addEventListener('click', () => {
+			overlay.style.display = "block";
+			document.body.style.overflow = "hidden";
+			video.setAttribute('src', `https://www.youtube.com/embed/${source}`)
+		});
+		</script>
+</body>
+</html>
